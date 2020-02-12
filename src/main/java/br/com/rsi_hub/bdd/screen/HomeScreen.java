@@ -7,7 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
 public class HomeScreen {
@@ -35,10 +34,6 @@ public class HomeScreen {
 	
 	@FindBy(how = How.ID, using = "com.Advantage.aShopping:id/imageViewSearch")
 	private WebElement clicaLupa;
-	
-	@FindBy(how = How.ID, using = "com.Advantage.aShopping:id/textViewProductName")
-	private WebElement produtoEscolhido;
-	
 	
 	@FindBy(how = How.XPATH, using = "//android.view.ViewGroup[@content-desc=\"Home Page\"]/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[3]/android.widget.ImageView")
 	private WebElement clicaTablet;
@@ -76,6 +71,7 @@ public class HomeScreen {
 		clicaSearch.click();
 		clicaSearch.sendKeys(produto);
 	}
+	
 	
 	public void clicaTable() {
 		wait.until(ExpectedConditions.visibilityOf(clicaTablet)).click();

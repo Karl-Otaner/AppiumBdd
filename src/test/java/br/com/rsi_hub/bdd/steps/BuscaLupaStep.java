@@ -2,6 +2,9 @@ package br.com.rsi_hub.bdd.steps;
 
 import static org.junit.Assert.assertTrue;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import br.com.rsi_hub.bdd.contexto.TestContext;
 import br.com.rsi_hub.bdd.screen.HomeScreen;
 import br.com.rsi_hub.bdd.screen.ProdutoScreen;
@@ -51,7 +54,8 @@ public class BuscaLupaStep {
 
 	@Entao("^validara o produto escolhido$")
 	public void validara_o_produto_escolhido() throws Throwable {
-		assertTrue(contexto.getAndroidDriverManager().createDriver().getPageSource().contains("HP STREAM - 11-D020NR LAPTOP"));
+		assertTrue(contexto.getAndroidDriverManager().createDriver().getPageSource()
+				.contains("HP STREAM - 11-D020NR LAPTOP"));
 
 
 	}
@@ -66,8 +70,9 @@ public class BuscaLupaStep {
 
 	@Entao("^valida a mensagem que o produto nao existe$")
 	public void validaAMensagemQueOProdutoNaoExiste() throws Throwable {
-		assertTrue(contexto.getAndroidDriverManager().createDriver().getPageSource().contains("No results for"));
-
+		System.out.println(produto.textoBusca());
+		assertTrue(produto.textoBusca().contains("No results for"));
+		
 	}
 	
 	

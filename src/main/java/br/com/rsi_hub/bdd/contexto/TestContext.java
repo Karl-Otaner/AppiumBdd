@@ -6,12 +6,10 @@ import br.com.rsi_hub.Gerenciadores.ScreenFactoryManager;
 public class TestContext {
 
 	private AndroidDriverManager androidDriverManager;
-	private ScenarioContext scenarioContext;
 	private ScreenFactoryManager screenFactoryManager;
 	
 	public TestContext() throws Exception {
 		androidDriverManager = new AndroidDriverManager();
-		scenarioContext = new ScenarioContext();
 		screenFactoryManager = new ScreenFactoryManager(androidDriverManager.createDriver());
 		
 	}
@@ -23,11 +21,6 @@ public class TestContext {
 	public ScreenFactoryManager getFactoryManager() {
 		return screenFactoryManager;
 	}
-	
-	public ScenarioContext getScenarioContext() {
-		return scenarioContext;
-	}
-
 	
 	
 }

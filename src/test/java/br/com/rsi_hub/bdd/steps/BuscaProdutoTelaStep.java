@@ -10,12 +10,11 @@ import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
 
 public class BuscaProdutoTelaStep {
-	
+
 	private TestContext contexto;
 	private HomeScreen home;
 	private ProdutoScreen produto;
-	
-	
+
 	public BuscaProdutoTelaStep(TestContext contexto) {
 		this.contexto = contexto;
 		home = contexto.getFactoryManager().getHomeScreen();
@@ -48,7 +47,8 @@ public class BuscaProdutoTelaStep {
 
 	@Entao("^valide o produto escolhido$")
 	public void valide_o_produto_escolhido() throws Throwable {
-		assertTrue(contexto.getAndroidDriverManager().createDriver().getPageSource().contains("HP PRO TABLET 608 G1"));
+		assertTrue(contexto.getAndroidDriverManager().createDriver().getPageSource()
+				.contains("HP PRO TABLET 608 G1"));
 
 	}
 
@@ -60,15 +60,14 @@ public class BuscaProdutoTelaStep {
 
 	@Quando("^clicar no headphone escolhido$")
 	public void clicar_no_headphone_escolhido() throws Throwable {
-		produto.ProdutoInvalido();
+		produto.ProdutoSemSaldo();
 
 	}
 
 	@Entao("^valide que nao tem saldo$")
 	public void valide_que_nao_tem_saldo() throws Throwable {
-		assertTrue(contexto.getAndroidDriverManager().createDriver().getPageSource().contains("SOLD OUT"));
+		assertTrue(produto.produtoEsgotado().contains("SOLD OUT"));
 
 	}
-	
-	
+
 }

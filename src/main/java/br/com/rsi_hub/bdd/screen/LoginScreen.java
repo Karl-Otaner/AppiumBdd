@@ -9,21 +9,19 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
 public class LoginScreen {
-	
-	public  AndroidDriver<MobileElement> driver;
-	private  WebElement elemento = null;
-	
+
+	public AndroidDriver<MobileElement> driver;
+
 	public LoginScreen(AndroidDriver<MobileElement> driver) {
 		PageFactory.initElements(driver, this);
 		this.driver = driver;
 	}
+
 	@FindBy(how = How.ID, using = "com.Advantage.aShopping:id/textViewDontHaveAnAccount")
 	private WebElement botaoLogin;
-	
-	
+
 	public void botaoLogin() {
 		botaoLogin.click();
 	}
-	
-	
+
 }
