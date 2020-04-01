@@ -67,8 +67,12 @@ public class FormularioScreen {
 	@FindBy(how = How.ID, using = "com.Advantage.aShopping:id/buttonRegister")
 	private WebElement botaoRegistro;
 	
+	
+	@FindBy(how = How.ID, using = "com.Advantage.aShopping:id/textViewMenuUser")
+	private static WebElement confirmaUsuario;
+	
 	@FindBy(how = How.ID, using = "com.Advantage.aShopping:id/buttonRegister")
-	private WebElement mensageErro;
+	private static WebElement mensageErro;
 
 	public void digiteNome(String digiteNome) throws Exception {
 		wait.until(ExpectedConditions.visibilityOf(nome)).click();
@@ -142,10 +146,14 @@ public class FormularioScreen {
 		
 	}
 	
+	public String getConfirmaUsuario() {
+		return confirmaUsuario.getText();
+	}
 	
-	public WebElement mensageErro() throws Exception{
+	
+	public String mensageErro() throws Exception{
 			wait.until(ExpectedConditions.visibilityOf(botaoRegistro));
-			return mensageErro;
+			return mensageErro.getText();
 			
 		}
 	

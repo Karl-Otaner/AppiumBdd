@@ -9,7 +9,6 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 public class ScreenShort {
-	
 	public static String getScreenshot(WebDriver driver) {
 
 		TakesScreenshot ts = (TakesScreenshot) driver;

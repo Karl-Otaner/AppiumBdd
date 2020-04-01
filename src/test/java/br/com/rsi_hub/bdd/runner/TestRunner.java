@@ -14,7 +14,7 @@ import cucumber.api.junit.Cucumber;
 		glue = {"br.com.rsi_hub.bdd.steps"},
 //		tags = {"@BuscaProdutoValido, @BuscaProdutoInvalido"}, //Busca de produtos pela lupa
 //		tags = {"@SucessoProudutoTelaApp,  @FalhaAquicaoDeProduto"}, //Busca de produtos pela tela
-//		tags = {"@Sucesso, @Falha"}, //Cadastro
+//		tags = {"@Sucesso"}, //Cadastro
 		
 		
 		monochrome = true,

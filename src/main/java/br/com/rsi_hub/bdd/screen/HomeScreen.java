@@ -82,8 +82,4 @@ public class HomeScreen {
 		wait.until(ExpectedConditions.visibilityOf(escolherHead)).click();
 	}
 
-	
-	
-	
-
 }
